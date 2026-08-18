@@ -1,0 +1,250 @@
+<%-include('header.ejs');%>
+
+      <main class="dashboard-content">
+        <div class="stat-cards" style="margin-bottom:1.75rem;">
+          <div class="stat-card">
+            <div class="stat-card-icon blue"><i class="fa-solid fa-calendar-days"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Total</div>
+              <div class="stat-card-value">246</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon orange"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Pending</div>
+              <div class="stat-card-value">52</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon green"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Approved</div>
+              <div class="stat-card-value">128</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon purple"><i class="fa-solid fa-flag-checkered"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Completed</div>
+              <div class="stat-card-value">49</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-toolbar">
+          <h2>All Appointments <span class="badge badge-primary">246 of 246</span></h2>
+          <div class="page-toolbar-actions">
+            <select class="form-control" style="max-width:180px;">
+              <option>All Status</option>
+              <option>Pending</option>
+              <option>Approved</option>
+              <option>Completed</option>
+              <option>Cancelled</option>
+            </select>
+            <input type="date" class="form-control" style="max-width:170px;" />
+            <button type="button" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Export CSV</button>
+            <a href="#appointment-form" class="btn btn-primary"><i class="fa-solid fa-plus"></i> New Appointment</a>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Department</th>
+                <th>Date &amp; Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#A1001</td>
+                <td>John Anderson</td>
+                <td>Dr. Sarah Mitchell</td>
+                <td>Cardiology</td>
+                <td>Jul 24, 2026 · 10:00 AM</td>
+                <td><span class="status-badge approved">Approved</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1002</td>
+                <td>Maria Garcia</td>
+                <td>Dr. Priya Sharma</td>
+                <td>Neurology</td>
+                <td>Jul 24, 2026 · 11:30 AM</td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1003</td>
+                <td>David Lee</td>
+                <td>Dr. James Carter</td>
+                <td>Orthopedics</td>
+                <td>Jul 24, 2026 · 01:00 PM</td>
+                <td><span class="status-badge completed">Completed</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1004</td>
+                <td>Sophia Turner</td>
+                <td>Dr. Lisa Nguyen</td>
+                <td>Dental</td>
+                <td>Jul 25, 2026 · 09:15 AM</td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1005</td>
+                <td>Daniel Kim</td>
+                <td>Dr. Michael Chen</td>
+                <td>Pediatrics</td>
+                <td>Jul 25, 2026 · 02:45 PM</td>
+                <td><span class="status-badge approved">Approved</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1006</td>
+                <td>Olivia Brown</td>
+                <td>Dr. Emily Davis</td>
+                <td>Dermatology</td>
+                <td>Jul 26, 2026 · 10:30 AM</td>
+                <td><span class="status-badge cancelled">Cancelled</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1007</td>
+                <td>Ethan Wilson</td>
+                <td>Dr. Ahmed Khan</td>
+                <td>ENT</td>
+                <td>Jul 26, 2026 · 03:00 PM</td>
+                <td><span class="status-badge completed">Completed</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>#A1008</td>
+                <td>Ava Martinez</td>
+                <td>Dr. Robert Williams</td>
+                <td>General Medicine</td>
+                <td>Jul 27, 2026 · 11:00 AM</td>
+                <td><span class="status-badge approved">Approved</span></td>
+                <td><div class="table-actions"><a href="#appointment-form" class="btn btn-sm btn-outline" aria-label="View"><i class="fa-solid fa-eye"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button type="button" disabled><i class="fa-solid fa-chevron-left"></i></button>
+          <button type="button" class="active">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="dashboard-panel" id="appointment-form" style="margin-top:1.75rem;">
+          <div class="dashboard-panel-header"><h3><i class="fa-solid fa-calendar-plus"></i> Book New Appointment</h3></div>
+          <div class="dashboard-panel-body">
+            <form action="#" method="post">
+              <div class="form-group">
+                <label class="form-label" for="appt-patient">Existing Patient</label>
+                <select id="appt-patient" name="patientId" class="form-control">
+                  <option value="">— New patient —</option>
+                  <option>John Anderson</option>
+                  <option>Maria Garcia</option>
+                  <option>David Lee</option>
+                  <option>Sophia Turner</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="appt-patient-name">Patient Name <span class="required">*</span></label>
+                  <input type="text" id="appt-patient-name" name="patientName" class="form-control" placeholder="Full name" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="appt-patient-phone">Patient Phone</label>
+                  <input type="tel" id="appt-patient-phone" name="patientPhone" class="form-control" placeholder="+1 555-0100" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="appt-patient-email">Patient Email</label>
+                <input type="email" id="appt-patient-email" name="patientEmail" class="form-control" placeholder="patient@example.com" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="appt-department">Department <span class="required">*</span></label>
+                  <select id="appt-department" name="departmentId" class="form-control" required>
+                    <option value="">Select department</option>
+                    <option>Cardiology</option>
+                    <option>Orthopedics</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                    <option>Dental</option>
+                    <option>Dermatology</option>
+                    <option>ENT</option>
+                    <option>General Medicine</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="appt-doctor">Doctor <span class="required">*</span></label>
+                  <select id="appt-doctor" name="doctorId" class="form-control" required>
+                    <option value="">Select doctor</option>
+                    <option>Dr. Sarah Mitchell</option>
+                    <option>Dr. James Carter</option>
+                    <option>Dr. Priya Sharma</option>
+                    <option>Dr. Michael Chen</option>
+                    <option>Dr. Lisa Nguyen</option>
+                    <option>Dr. Emily Davis</option>
+                    <option>Dr. Ahmed Khan</option>
+                    <option>Dr. Robert Williams</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="appt-date">Date <span class="required">*</span></label>
+                  <input type="date" id="appt-date" name="date" class="form-control" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="appt-time">Time <span class="required">*</span></label>
+                  <select id="appt-time" name="time" class="form-control" required>
+                    <option value="">Select time</option>
+                    <option>09:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>01:00 PM</option>
+                    <option>02:00 PM</option>
+                    <option>03:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="appt-status">Status</label>
+                <select id="appt-status" name="status" class="form-control">
+                  <option value="pending">Pending</option>
+                  <option value="approved">Approved</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="appt-reason">Reason for Visit</label>
+                <textarea id="appt-reason" name="reason" class="form-control" rows="3" placeholder="Reason for visit / symptoms…"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="reset" class="btn btn-outline">Reset</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-calendar-plus"></i> Book Appointment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

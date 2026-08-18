@@ -1,0 +1,229 @@
+<%-include('header.ejs');%>
+    <!-- ===================== MAIN ===================== -->
+    <div class="dashboard-main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>Appointments</h1>
+            <p>Review, approve, and track your patient visits</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="dashboard.html#notifications">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-user-plus"></i></div>
+                  <div class="notification-body">
+                    <h5>New Patient Assigned</h5>
+                    <p>Michael Carter has been assigned to your care.</p>
+                    <span class="notif-time">1 hour ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Request</h5>
+                    <p>Priya Anand requested an appointment for Jul 29.</p>
+                    <span class="notif-time">3 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Result Alert</h5>
+                    <p>Abnormal result flagged for patient Daniel Osei.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="dashboard.html#notifications">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+              <span class="profile-name">Dr. Sarah Mitchell</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Dr. Sarah Mitchell</strong>
+                <span>Cardiology</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> My Schedule</a>
+              <div class="divider"></div>
+              <a href="/docotr/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="page-toolbar">
+          <h2>Manage Appointments</h2>
+          <div class="page-toolbar-actions">
+            <button type="button" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-download"></i> Export Today
+            </button>
+          </div>
+        </div>
+
+        <div class="dashboard-panel">
+          <div class="dashboard-panel-body">
+            <div data-tabs>
+              <div class="tabs">
+                <button type="button" class="tab-btn active" data-tab="today">Today <span>3</span></button>
+                <button type="button" class="tab-btn" data-tab="upcoming">Upcoming <span>2</span></button>
+                <button type="button" class="tab-btn" data-tab="completed">Completed <span>3</span></button>
+                <button type="button" class="tab-btn" data-tab="cancelled">Cancelled <span>1</span></button>
+              </div>
+
+              <div class="tab-panel active" data-tab-panel="today">
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr><th>Patient</th><th>Time</th><th>Reason</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Michael Carter</strong><span>Male · 42 yrs</span></div></div></td>
+                        <td>09:00 AM</td>
+                        <td>Follow-up</td>
+                        <td><span class="badge badge-approved">Approved</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Emma Johnson</strong><span>Female · 31 yrs</span></div></div></td>
+                        <td>10:30 AM</td>
+                        <td>Routine checkup</td>
+                        <td><span class="badge badge-approved">Approved</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Priya Anand</strong><span>Female · 27 yrs</span></div></div></td>
+                        <td>01:15 PM</td>
+                        <td>New patient consultation</td>
+                        <td><span class="badge badge-pending">Pending</span></td>
+                        <td class="table-actions">
+                          <button type="button" class="btn btn-sm btn-primary">Approve</button>
+                          <button type="button" class="btn btn-sm btn-outline">Decline</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-panel" data-tab-panel="upcoming" hidden>
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr><th>Patient</th><th>Date</th><th>Time</th><th>Reason</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Daniel Osei</strong><span>Male · 55 yrs</span></div></div></td>
+                        <td>Jul 30, 2026</td>
+                        <td>11:00 AM</td>
+                        <td>Lab result follow-up</td>
+                        <td><span class="badge badge-pending">Pending</span></td>
+                        <td class="table-actions">
+                          <button type="button" class="btn btn-sm btn-primary">Approve</button>
+                          <button type="button" class="btn btn-sm btn-outline">Decline</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Grace Kim</strong><span>Female · 38 yrs</span></div></div></td>
+                        <td>Aug 02, 2026</td>
+                        <td>09:30 AM</td>
+                        <td>New patient consultation</td>
+                        <td><span class="badge badge-approved">Approved</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-panel" data-tab-panel="completed" hidden>
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr><th>Patient</th><th>Date</th><th>Time</th><th>Reason</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>John Smith</strong><span>Male · 47 yrs</span></div></div></td>
+                        <td>Jul 15, 2026</td>
+                        <td>10:00 AM</td>
+                        <td>Chest pain evaluation</td>
+                        <td><span class="badge badge-completed">Completed</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Anna Lee</strong><span>Female · 29 yrs</span></div></div></td>
+                        <td>Jul 10, 2026</td>
+                        <td>02:30 PM</td>
+                        <td>Routine checkup</td>
+                        <td><span class="badge badge-completed">Completed</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Robert Diaz</strong><span>Male · 60 yrs</span></div></div></td>
+                        <td>Jul 05, 2026</td>
+                        <td>09:00 AM</td>
+                        <td>Post-surgery follow-up</td>
+                        <td><span class="badge badge-completed">Completed</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-panel" data-tab-panel="cancelled" hidden>
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr><th>Patient</th><th>Date</th><th>Time</th><th>Reason</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Kevin Brooks</strong><span>Male · 34 yrs</span></div></div></td>
+                        <td>Jul 08, 2026</td>
+                        <td>03:00 PM</td>
+                        <td>Routine checkup</td>
+                        <td><span class="badge badge-cancelled">Cancelled</span></td>
+                        <td class="table-actions"><a href="patients.html" class="btn btn-sm btn-outline">View</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<%-include('footer.ejs');%>
+
+

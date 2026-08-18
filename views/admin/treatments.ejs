@@ -1,0 +1,124 @@
+<%-include('header.ejs');%>
+<main class="dashboard-content">
+        <div class="page-toolbar">
+          <h2>All Treatments <span class="badge badge-primary">8 of 8</span></h2>
+          <div class="page-toolbar-actions">
+            <select class="form-control" style="max-width:200px;">
+              <option>All Departments</option>
+              <option>Cardiology</option>
+              <option>Orthopedics</option>
+              <option>Dental</option>
+              <option>Radiology</option>
+              <option>Pathology</option>
+              <option>Oncology</option>
+              <option>Dermatology</option>
+              <option>Nephrology</option>
+            </select>
+            <button type="button" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Export CSV</button>
+            <a href="#treatment-form" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Treatment</a>
+          </div>
+        </div>
+
+        
+        
+
+        <div class="dashboard-panel" id="treatment-form" style="margin-top:1.75rem;">
+          <div class="dashboard-panel-header"><h3><i class="fa-solid fa-stethoscope"></i> Add / Edit Treatment</h3></div>
+          <div class="dashboard-panel-body">
+            <form action="/admin/save_treatment" method="post" enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="treat-name">Treatment Name <span class="required"></span></label>
+                  <input type="text" id="treat-name" name="tret_name" class="form-control" placeholder="MRI Scan"  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="treat-department">Department <span class="required"></span></label>
+                  <select id="treat-department" name="tret_department" class="form-control" >
+                    <option value="">Select department</option>
+                    <% for(var i=0;i<department.length;i++){ %>
+                    <option value="<%=department[i].Did%>"><%=department[i].Department_name%></option>
+                    <% } %>
+                  
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="treat-duration">Duration</label>
+                  <input type="text" id="treat-duration" name="tret_duration" class="form-control" placeholder="45 mins" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="treat-price">Price ($) <span class="required">*</span></label>
+                  <input type="number"  name="tret_price" class="form-control" min="0" step="1" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="treat-description">Description</label>
+                <textarea id="treat-description" name="tret_description" class="form-control" rows="3" placeholder="Brief description of the treatment…"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="treat-description">Treatment Image</label>
+                  <input type="file"  name="tret_image" class="form-control" />
+                
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="treat-status">Status</label>
+                  <select id="treat-status" name="tret_status" class="form-control">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="reset" class="btn btn-outline">Reset</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Treatment</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="table-wrapper">
+          <table class="table" style="margin-top:50px;">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Treatment</th>
+                <th>Department</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i=0;i<treatment.length;i++){ %>
+              <tr>
+                <td><%=i+1%></td>
+                <td><%=treatment[i].t_name%></td>
+                <td>-</td>
+                <td><%=treatment[i].tret_Duration%></td>
+                <td>₹<%=treatment[i].tret_Price%></td>
+                <td><span class="status-badge active"><%=treatment[i].tret_Status%></span></td>
+                <td>
+                  <div class="table-actions">
+                    
+                    <a href="/admin/delete_treatement/<%=treatment[i].tid%>"><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete" onclick="return confirm('Are you sure delete <%=treatment[i].t_name%> treatment ')"><i class="fa-solid fa-trash"></i></button></a>
+                  </div>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+           </table>
+        </div>
+        <div class="pagination">
+          <button type="button" disabled><i class="fa-solid fa-chevron-left"></i></button>
+          <button type="button" class="active">1</button>
+          <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <%-include('footer.ejs');%>

@@ -1,0 +1,66 @@
+<%-include('header.ejs');%>
+
+  <main id="main-content">
+    <section class="page-banner">
+      <div class="container">
+        <h1>Find a Doctor</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Doctors</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="results-header">
+          <span class="results-count">Showing all <strong>12</strong> doctors</span>
+        </div>
+
+        <div class="doctor-grid">
+          <% for(var i=0;i<doctors.length;i++){ %>
+          <article class="doctor-card" >
+            <a href="doctor-details.html" class="doctor-img">
+              <img src="/images/<%=doctors[i].Doctor_image %>" alt="<%=doctors[i].Doctor_name %>" />
+              <span class="doctor-badge"><%=doctors[i].Doctor_expirence %> Years</span>
+            </a>
+            <div class="doctor-body">
+              <h4><a href="doctor-details.html"><%=doctors[i].Doctor_name %></a></h4>
+              <p class="specialty"><%=doctors[i].Doctor_specility %></p>
+              <div class="doctor-meta"><span><%=doctors[i].Doctor_department %></span>
+                <% for(var a=0;a<doctors[i].Doctor_rating;a++){ %>
+                <span class="rating"><i class="fa-solid fa-star"></i>
+              </span>
+              <% } %>
+              <%=doctors[i].Doctor_rating %> 
+              <span><%=doctors[i].Doctor_treat_patient %></span>
+            </div>
+              <a href="/book_appointment/<%=doctors[i].Doc_id %>" class="btn btn-primary btn-sm">Book Appointment</a>
+            </div>
+          </article>
+          <% } %>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-alt">
+      <div class="container">
+        <div class="cta-banner" data-aos="fade-up">
+          <div class="container">
+            <h2>Ready to Book Your Visit?</h2>
+            <p>Choose your doctor and pick a convenient time slot in under a minute.</p>
+            <div class="btn-group">
+              <a href="appointment.html" class="btn btn-white btn-lg"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+              <a href="departments.html" class="btn btn-outline-white btn-lg">Browse Departments</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+ <%-include('footer.ejs')%>

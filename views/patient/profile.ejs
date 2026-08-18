@@ -1,0 +1,213 @@
+<%-include('header.ejs');%>
+
+
+    <main class="dashboard-main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>My Profile</h1>
+            <p>Manage your personal information and account security.</p>
+          </div>
+        </div>
+
+        <form class="topbar-search" action="#" method="get" role="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" name="q" placeholder="Search records, doctors, invoices…" aria-label="Search" />
+        </form>
+
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="badge-dot">2</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="notifications.html">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Confirmed</h5>
+                    <p>Your visit with Dr. Sarah Mitchell on Jul 28 at 10:30 AM is confirmed.</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Report Ready</h5>
+                    <p>Your Complete Blood Count report is ready to download.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-credit-card"></i></div>
+                  <div class="notification-body">
+                    <h5>Payment Due</h5>
+                    <p>Invoice INV-2041 of $85.00 is due on Aug 2.</p>
+                    <span class="notif-time">2 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="notifications.html">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Emma Johnson" />
+              <span class="profile-name">Emma Johnson</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Emma Johnson</strong>
+                <span>emma.johnson@example.com</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> My Appointments</a>
+              <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a>
+              <div class="divider"></div>
+              <a href="/petient/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="profile-layout">
+          <div class="profile-sidebar-card">
+            <div class="profile-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Emma Johnson" />
+              <span class="avatar-edit" title="Change photo"><i class="fa-solid fa-camera"></i></span>
+            </div>
+            <h3>Emma Johnson</h3>
+            <span class="role-tag">Patient Account</span>
+            <p class="text-muted" style="font-size:0.875rem; margin-bottom:0;">emma.johnson@example.com</p>
+            <div class="profile-stats-mini">
+              <div>
+                <strong>12</strong>
+                <span>Appointments</span>
+              </div>
+              <div>
+                <strong>2022</strong>
+                <span>Member Since</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-form-card">
+            <div class="profile-form-tabs" data-tabs>
+              <button type="button" class="active" data-tab="info">Personal Information</button>
+              <button type="button" data-tab="security">Security</button>
+            </div>
+
+            <div class="profile-form-body">
+              <div class="tab-panel active" data-tab-panel="info">
+                <div class="form-section-title">Personal Information</div>
+                <form action="#" method="post">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Full Name <span class="required">*</span></label>
+                      <input type="text" name="name" class="form-control" value="Emma Johnson" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Email Address</label>
+                      <input type="email" name="email" class="form-control" value="emma.johnson@example.com" disabled />
+                      <p class="form-hint">Contact support to change your registered email.</p>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Phone Number</label>
+                      <input type="tel" name="phone" class="form-control" value="+1 555-0148" placeholder="+1 555-0100" />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Date of Birth</label>
+                      <input type="date" name="dob" class="form-control" value="1994-03-12" />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Blood Group</label>
+                      <select name="bloodGroup" class="form-control">
+                        <option value="">Select</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option selected>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Gender</label>
+                      <select name="gender" class="form-control">
+                        <option value="">Select</option>
+                        <option value="female" selected>Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Address</label>
+                    <textarea name="address" class="form-control" rows="3" placeholder="Street, city, state, ZIP">482 Maple Grove Lane, Health City, HC 90212</textarea>
+                  </div>
+                  <div class="form-actions">
+                    <button type="reset" class="btn btn-outline">Reset</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="tab-panel" data-tab-panel="security" hidden>
+                <div class="form-section-title">Change Password</div>
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label class="form-label">Current Password <span class="required">*</span></label>
+                    <div class="input-icon right">
+                      <input type="password" name="oldPassword" id="oldPassword" class="form-control" required />
+                      <i class="fa-regular fa-eye" data-toggle-password="oldPassword"></i>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">New Password <span class="required">*</span></label>
+                      <input type="password" name="newPassword" class="form-control" minlength="6" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Confirm New Password <span class="required">*</span></label>
+                      <input type="password" name="confirmPassword" class="form-control" minlength="6" required />
+                    </div>
+                  </div>
+                  <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Use at least 6 characters, mixing letters and numbers for a stronger password.</span>
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-shield-halved"></i> Update Password</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+<%-include('footer.ejs');%>
+  

@@ -1,0 +1,178 @@
+<%-include('header.ejs');%>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="dashboard-main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>Treatment Notes</h1>
+            <p>Document diagnosis, treatment, and follow-up plans</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="dashboard.html#notifications">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-user-plus"></i></div>
+                  <div class="notification-body">
+                    <h5>New Patient Assigned</h5>
+                    <p>Michael Carter has been assigned to your care.</p>
+                    <span class="notif-time">1 hour ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Request</h5>
+                    <p>Priya Anand requested an appointment for Jul 29.</p>
+                    <span class="notif-time">3 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Result Alert</h5>
+                    <p>Abnormal result flagged for patient Daniel Osei.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="dashboard.html#notifications">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+              <span class="profile-name">Dr. Sarah Mitchell</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Dr. Sarah Mitchell</strong>
+                <span>Cardiology</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> My Schedule</a>
+              <div class="divider"></div>
+              <a href="/docotr/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="dashboard-grid">
+          <div class="col-5">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header">
+                <h3>New Treatment Note</h3>
+              </div>
+              <div class="dashboard-panel-body">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label class="form-label">Patient <span class="required">*</span></label>
+                    <select class="form-control" name="patientId" required>
+                      <option value="">Select Patient</option>
+                      <option>Michael Carter</option>
+                      <option>Emma Johnson</option>
+                      <option>Priya Anand</option>
+                      <option>Daniel Osei</option>
+                      <option>Grace Kim</option>
+                      <option>John Smith</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Disease / Condition <span class="required">*</span></label>
+                    <input type="text" name="disease" class="form-control" placeholder="e.g. Hypertension" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Diagnosis <span class="required">*</span></label>
+                    <textarea name="diagnosis" class="form-control" placeholder="Clinical findings and diagnosis summary…" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Treatment Notes</label>
+                    <textarea name="notes" class="form-control" placeholder="Recommended treatment plan, procedures, advice…"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Medicines</label>
+                    <input type="text" name="medicines" class="form-control" placeholder="e.g. Amlodipine 5mg, Atorvastatin 20mg" />
+                    <span class="form-hint">Separate multiple medicines with commas.</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Next Visit</label>
+                    <input type="date" name="nextVisit" class="form-control" />
+                  </div>
+                  <div class="form-actions">
+                    <button type="reset" class="btn btn-outline">Clear</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Note</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-7">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header">
+                <h3>Recent Treatment Notes</h3>
+              </div>
+              <div class="dashboard-panel-body no-pad">
+                <div class="activity-feed" style="padding:0.5rem 1.35rem;">
+                  <div class="activity-item">
+                    <div class="notification-icon success"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="notification-body">
+                      <h5>Michael Carter — Hypertension</h5>
+                      <p>Stage 1 hypertension, well controlled. Continue Amlodipine 5mg daily. Next visit Nov 02, 2026.</p>
+                      <span class="notif-time">Jul 23, 2026</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="notification-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="notification-body">
+                      <h5>Priya Anand — Anxiety-related palpitations</h5>
+                      <p>ECG normal; recommended stress management and follow-up in 4 weeks.</p>
+                      <span class="notif-time">Jul 20, 2026</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                    <div class="notification-body">
+                      <h5>Daniel Osei — Abnormal lipid panel</h5>
+                      <p>Started Atorvastatin 20mg nightly. Repeat lipid panel in 6 weeks.</p>
+                      <span class="notif-time">Jul 18, 2026</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="notification-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="notification-body">
+                      <h5>Emma Johnson — Routine cardiac review</h5>
+                      <p>All vitals within normal range. Continue current lifestyle plan. Next visit in 6 months.</p>
+                      <span class="notif-time">Jul 15, 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<%-include('footer.ejs');%>

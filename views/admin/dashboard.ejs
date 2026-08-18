@@ -1,0 +1,166 @@
+<%-include('header.ejs')%>
+
+      <main class="dashboard-content">
+        <div class="dashboard-welcome">
+          <h2>Welcome back, System Admin 👋</h2>
+          <p>Here's what's happening across MediCare Plus today.</p>
+        </div>
+
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-card-icon blue"><i class="fa-solid fa-hospital-user"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Total Patients</div>
+              <div class="stat-card-value">1,248</div>
+              <div class="stat-trend up"><i class="fa-solid fa-arrow-trend-up"></i> 34 new this month</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon green"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Total Doctors</div>
+              <div class="stat-card-value">42</div>
+              <div class="stat-trend neutral">38 active</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon orange"><i class="fa-solid fa-calendar-day"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Today's Appointments</div>
+              <div class="stat-card-value">18</div>
+              <div class="stat-trend neutral">5 pending approval</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon purple"><i class="fa-solid fa-sack-dollar"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Total Revenue</div>
+              <div class="stat-card-value">$128,450</div>
+              <div class="stat-trend neutral">2 items low stock</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="col-8">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header">
+                <h3>Appointment Trend</h3>
+                <span class="badge badge-primary"><i class="fa-solid fa-calendar-week"></i> Last 7 months</span>
+              </div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Jan</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:58%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">142</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Feb</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:64%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">158</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Mar</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:71%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">176</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Apr</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:66%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">164</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">May</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:80%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">198</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Jun</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:87%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">214</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Jul</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:100%"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">246</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header"><h3>Appointment Status</h3></div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Approved</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:52%;background:var(--success);"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">52%</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Pending</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:21%;background:var(--warning);"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">21%</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Completed</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:20%;"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">20%</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Cancelled</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:7%;background:var(--danger);"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">7%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header"><h3>Doctors by Department</h3></div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">Cardiology</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:75%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">6</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">Pediatrics</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:87%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">7</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">Orthopedics</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:62%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">5</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">Neurology</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:50%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">4</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">General Medicine</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:75%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">6</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">ENT</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:37%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">3</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">Dental</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:37%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">3</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;"><span style="min-width:150px;font-size:0.85rem;color:var(--text-secondary);">Dermatology</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:25%"></div></div><span style="min-width:24px;text-align:right;font-weight:600;font-size:0.85rem;">2</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="col-12">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header">
+                <h3>Recent Appointments</h3>
+                <a href="appointments.html">View all <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="dashboard-panel-body no-pad">
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr><th>Patient</th><th>Doctor</th><th>Date &amp; Time</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>John Anderson</td><td>Dr. Sarah Mitchell</td><td>Jul 24, 2026 · 10:00 AM</td><td><span class="status-badge approved">Approved</span></td></tr>
+                      <tr><td>Maria Garcia</td><td>Dr. Priya Sharma</td><td>Jul 24, 2026 · 11:30 AM</td><td><span class="status-badge pending">Pending</span></td></tr>
+                      <tr><td>David Lee</td><td>Dr. James Carter</td><td>Jul 24, 2026 · 01:00 PM</td><td><span class="status-badge completed">Completed</span></td></tr>
+                      <tr><td>Sophia Turner</td><td>Dr. Lisa Nguyen</td><td>Jul 25, 2026 · 09:15 AM</td><td><span class="status-badge pending">Pending</span></td></tr>
+                      <tr><td>Daniel Kim</td><td>Dr. Michael Chen</td><td>Jul 25, 2026 · 02:45 PM</td><td><span class="status-badge approved">Approved</span></td></tr>
+                      <tr><td>Olivia Brown</td><td>Dr. Emily Davis</td><td>Jul 26, 2026 · 10:30 AM</td><td><span class="status-badge cancelled">Cancelled</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-panel" style="margin-bottom:1.75rem;">
+          <div class="dashboard-panel-header"><h3>Quick Actions</h3></div>
+          <div class="dashboard-panel-body">
+            <div class="quick-actions">
+              <a href="doctors.html" class="quick-action"><i class="fa-solid fa-user-doctor"></i><span>Manage Doctors</span></a>
+              <a href="patients.html" class="quick-action"><i class="fa-solid fa-hospital-user"></i><span>Manage Patients</span></a>
+              <a href="appointments.html" class="quick-action"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+              <a href="departments.html" class="quick-action"><i class="fa-solid fa-sitemap"></i><span>Departments</span></a>
+              <a href="medicines.html" class="quick-action"><i class="fa-solid fa-pills"></i><span>Pharmacy Inventory</span></a>
+              <a href="reports.html" class="quick-action"><i class="fa-solid fa-chart-line"></i><span>View Reports</span></a>
+              <a href="settings.html" class="quick-action"><i class="fa-solid fa-gear"></i><span>Hospital Settings</span></a>
+              <a href="../gallery.html" target="_blank" rel="noopener" class="quick-action"><i class="fa-solid fa-images"></i><span>Preview Website</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="col-6">
+            <div class="note-card">
+              <h4><i class="fa-solid fa-bell-concierge" style="color:var(--primary)"></i> Reception Desk</h4>
+              <p>Front-desk checklist for today's shift — front office staff should confirm the following before clocking out:</p>
+              <ul>
+                <li>Verify all walk-in patients are logged under <a href="patients.html">Patients</a>.</li>
+                <li>Confirm pending appointments in the queue have been approved or rescheduled.</li>
+                <li>Update ID/insurance documentation for new registrations.</li>
+                <li>Hand off emergency intake notes to the on-call department.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="note-card billing">
+              <h4><i class="fa-solid fa-file-invoice-dollar text-secondary"></i> Billing Desk</h4>
+              <p>End-of-day billing reminders — finance staff should reconcile the following:</p>
+              <ul>
+                <li>Match completed appointments against <a href="reports.html">Revenue Reports</a> for the day.</li>
+                <li>Flag overdue consultation fees for follow-up calls.</li>
+                <li>Cross-check pharmacy dispensations against <a href="medicines.html">Medicine Inventory</a>.</li>
+                <li>Export the daily ledger from the Reports page.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

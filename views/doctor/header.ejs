@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MediCare Plus Doctor Panel — manage today's, upcoming, and completed appointments." />
+  <title>Appointments | Doctor Panel | MediCare Plus</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="dashboard-body" data-role="doctor" data-page="appointments">
+
+  <div class="dashboard-layout role-doctor" data-role="doctor">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <a href="/doctor/dashboard" class="sidebar-brand">
+        <span class="logo-icon"><i class="fa-solid fa-hospital"></i></span>
+        <span class="sidebar-brand-text">Medi<span>Care</span> Plus</span>
+      </a>
+
+      <div class="sidebar-user">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+        <div class="sidebar-user-info">
+          <h5>Dr. Sarah Mitchell</h5>
+          <span>Cardiology</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Doctor navigation">
+        <span class="nav-section-label">Overview</span>
+        <a href="/doctor/dashboard" class="nav-item"><i class="fa-solid fa-gauge-high"></i><span class="nav-label">Dashboard</span></a>
+        <a href="/doctor/profile" class="nav-item"><i class="fa-solid fa-user-doctor"></i><span class="nav-label">Profile</span></a>
+
+        <span class="nav-section-label">Patient Care</span>
+        <a href="/doctor/appointments" class="nav-item active">
+          <i class="fa-solid fa-calendar-check"></i><span class="nav-label">Appointments</span>
+          <span class="nav-badge">5</span>
+        </a>
+        <a href="/doctor/patients" class="nav-item"><i class="fa-solid fa-hospital-user"></i><span class="nav-label">Patients</span></a>
+        <a href="/doctor/treatment" class="nav-item"><i class="fa-solid fa-notes-medical"></i><span class="nav-label">Treatment Notes</span></a>
+        <a href="/doctor/prescription" class="nav-item"><i class="fa-solid fa-file-prescription"></i><span class="nav-label">Prescriptions</span></a>
+        <a href="/doctor/reports" class="nav-item"><i class="fa-solid fa-file-medical"></i><span class="nav-label">Reports</span></a>
+
+        <span class="nav-section-label">Planning</span>
+        <a href="schedule" class="nav-item"><i class="fa-solid fa-calendar-days"></i><span class="nav-label">Schedule</span></a>
+        <a href="/doctor/dashboard#notifications" class="nav-item"><i class="fa-solid fa-bell"></i><span class="nav-label">Notifications</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/" class="nav-item"><i class="fa-solid fa-globe"></i><span class="nav-label">Website</span></a>
+        <a href="/login" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Logout</span></a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay"></div>

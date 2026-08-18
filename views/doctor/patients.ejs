@@ -1,0 +1,221 @@
+<%-include('header.ejs');%>
+    <!-- ===================== MAIN ===================== -->
+    <div class="dashboard-main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>Patients</h1>
+            <p>Everyone you've treated or have upcoming visits with</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="dashboard.html#notifications">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-user-plus"></i></div>
+                  <div class="notification-body">
+                    <h5>New Patient Assigned</h5>
+                    <p>Michael Carter has been assigned to your care.</p>
+                    <span class="notif-time">1 hour ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Request</h5>
+                    <p>Priya Anand requested an appointment for Jul 29.</p>
+                    <span class="notif-time">3 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Result Alert</h5>
+                    <p>Abnormal result flagged for patient Daniel Osei.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="dashboard.html#notifications">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+              <span class="profile-name">Dr. Sarah Mitchell</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Dr. Sarah Mitchell</strong>
+                <span>Cardiology</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> My Schedule</a>
+              <div class="divider"></div>
+              <a href="/docotr/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="page-toolbar">
+          <h2>Patient Records</h2>
+          <div class="page-toolbar-actions">
+            <div class="search-box" style="width:280px;">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" placeholder="Search by name, phone, blood group…" />
+            </div>
+            <button type="button" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-download"></i> Export CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="dashboard-panel" style="margin-bottom:1.75rem;">
+          <div class="dashboard-panel-body no-pad">
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr><th>Patient</th><th>Gender / Age</th><th>Phone</th><th>Blood Group</th><th>Last Visit</th><th>Total Visits</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Michael Carter</strong><span>Hypertension follow-up</span></div></div></td>
+                    <td>Male · 42 yrs</td>
+                    <td>+1 555-0110</td>
+                    <td>O+</td>
+                    <td>Jul 23, 2026</td>
+                    <td>9</td>
+                    <td class="table-actions"><a href="#patient-detail" class="btn btn-sm btn-outline"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Emma Johnson</strong><span>Routine cardiac checkup</span></div></div></td>
+                    <td>Female · 31 yrs</td>
+                    <td>+1 555-0148</td>
+                    <td>B+</td>
+                    <td>Jul 23, 2026</td>
+                    <td>12</td>
+                    <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-eye"></i> View</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-user"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Priya Anand</strong><span>New patient consultation</span></div></div></td>
+                    <td>Female · 27 yrs</td>
+                    <td>+1 555-0176</td>
+                    <td>A+</td>
+                    <td>—</td>
+                    <td>0</td>
+                    <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-eye"></i> View</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Daniel Osei</strong><span>Abnormal lab result</span></div></div></td>
+                    <td>Male · 55 yrs</td>
+                    <td>+1 555-0164</td>
+                    <td>AB-</td>
+                    <td>Jul 20, 2026</td>
+                    <td>5</td>
+                    <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-eye"></i> View</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-user"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>Grace Kim</strong><span>New patient consultation</span></div></div></td>
+                    <td>Female · 38 yrs</td>
+                    <td>+1 555-0189</td>
+                    <td>O-</td>
+                    <td>—</td>
+                    <td>0</td>
+                    <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-eye"></i> View</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="" /><div><strong>John Smith</strong><span>Chest pain evaluation</span></div></div></td>
+                    <td>Male · 47 yrs</td>
+                    <td>+1 555-0121</td>
+                    <td>A-</td>
+                    <td>Jul 15, 2026</td>
+                    <td>6</td>
+                    <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-eye"></i> View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patient Detail -->
+        <div class="dashboard-panel" id="patient-detail">
+          <div class="dashboard-panel-header">
+            <h3>Patient Details</h3>
+          </div>
+          <div class="dashboard-panel-body">
+            <div class="user-meta" style="margin-bottom:1.5rem;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Michael Carter" class="avatar avatar-lg" />
+              <div>
+                <div class="name" style="font-size:1.15rem;">Michael Carter</div>
+                <div class="sub">Male · 42 yrs · O+ · Hypertension follow-up</div>
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom:1.5rem;">
+              <div>
+                <label class="form-label">Phone</label>
+                <p>+1 555-0110</p>
+              </div>
+              <div>
+                <label class="form-label">Email</label>
+                <p>michael.carter@example.com</p>
+              </div>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label class="form-label">Address</label>
+              <p>920 Elm Street, Health City, HC 90214</p>
+            </div>
+            <h4 class="form-section-title">Appointment History</h4>
+            <div class="activity-feed">
+              <div class="activity-item">
+                <div class="notification-icon success"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="notification-body">
+                  <h5>Follow-up visit — Blood pressure stable</h5>
+                  <p>Jul 23, 2026 · 09:00 AM</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="notification-icon"><i class="fa-solid fa-notes-medical"></i></div>
+                <div class="notification-body">
+                  <h5>Treatment note added — Amlodipine dosage adjusted</h5>
+                  <p>May 02, 2026 · 09:15 AM</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                <div class="notification-body">
+                  <h5>Lab work ordered — Lipid panel</h5>
+                  <p>Feb 10, 2026 · 11:30 AM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="border-top:1px solid var(--border-light);display:flex;gap:0.75rem;padding-top:1.25rem;">
+            <a href="treatment.html" class="btn btn-outline"><i class="fa-solid fa-notes-medical"></i> New Treatment Note</a>
+            <a href="prescription.html" class="btn btn-primary"><i class="fa-solid fa-file-prescription"></i> New Prescription</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<%-include('footer.ejs');%>

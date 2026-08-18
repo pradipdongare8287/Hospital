@@ -1,0 +1,130 @@
+<%-include('header.ejs');%>
+      <main class="dashboard-content">
+        <div class="page-toolbar">
+          <h2>Filter Report Range</h2>
+          <div class="page-toolbar-actions">
+            <input type="date" class="form-control" style="max-width:170px;" value="2026-07-01" />
+            <span style="color:var(--text-muted);">to</span>
+            <input type="date" class="form-control" style="max-width:170px;" value="2026-07-23" />
+            <select class="form-control" style="max-width:190px;">
+              <option>All Departments</option>
+              <option>Cardiology</option>
+              <option>Neurology</option>
+              <option>Orthopedics</option>
+              <option>Pediatrics</option>
+            </select>
+            <button type="button" class="btn btn-primary"><i class="fa-solid fa-filter"></i> Apply</button>
+            <button type="button" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Export Report</button>
+          </div>
+        </div>
+
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-card-icon blue"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Appointments in Range</div>
+              <div class="stat-card-value">246</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Revenue in Range</div>
+              <div class="stat-card-value">$128,450</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon orange"><i class="fa-solid fa-hospital-user"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Patients Seen</div>
+              <div class="stat-card-value">214</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon purple"><i class="fa-solid fa-star"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Avg Doctor Rating</div>
+              <div class="stat-card-value">4.7</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="col-8">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header"><h3>Revenue &amp; Appointment Trend</h3></div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Jan</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:58%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$14,200</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Feb</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:64%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$15,800</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Mar</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:71%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$17,600</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Apr</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:66%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$16,400</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">May</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:80%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$19,800</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Jun</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:87%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$21,400</span></div>
+                <div style="display:flex;align-items:center;gap:1rem;"><span style="min-width:42px;font-size:0.85rem;color:var(--text-secondary);">Jul</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:100%"></div></div><span style="min-width:70px;text-align:right;font-weight:600;font-size:0.85rem;">$24,600</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header"><h3>By Department</h3></div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:90px;font-size:0.8rem;color:var(--text-secondary);">Cardiology</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:32%"></div></div></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:90px;font-size:0.8rem;color:var(--text-secondary);">Pediatrics</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:26%"></div></div></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:90px;font-size:0.8rem;color:var(--text-secondary);">Orthopedics</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:22%"></div></div></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;"><span style="min-width:90px;font-size:0.8rem;color:var(--text-secondary);">Neurology</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:20%"></div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header"><h3>Appointment Status Breakdown</h3></div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Approved</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:52%;background:var(--success);"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">52%</span></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Pending</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:21%;background:var(--warning);"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">21%</span></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Completed</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:20%;"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">20%</span></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;"><span style="min-width:80px;font-size:0.85rem;color:var(--text-secondary);">Cancelled</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:7%;background:var(--danger);"></div></div><span style="min-width:36px;text-align:right;font-weight:600;font-size:0.85rem;">7%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header"><h3>Top Performing Doctors</h3></div>
+              <div class="dashboard-panel-body">
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:140px;font-size:0.8rem;color:var(--text-secondary);">Dr. Sarah Mitchell</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:92%"></div></div></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:140px;font-size:0.8rem;color:var(--text-secondary);">Dr. Michael Chen</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:87%"></div></div></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.9rem;"><span style="min-width:140px;font-size:0.8rem;color:var(--text-secondary);">Dr. Priya Sharma</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:80%"></div></div></div>
+                <div style="display:flex;align-items:center;gap:0.85rem;"><span style="min-width:140px;font-size:0.8rem;color:var(--text-secondary);">Dr. James Carter</span><div class="progress" style="flex:1;"><div class="progress-bar" style="width:74%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-panel" style="margin-top:0.25rem;">
+          <div class="dashboard-panel-header">
+            <h3>Detailed Appointment Log</h3>
+            <button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Export CSV</button>
+          </div>
+          <div class="dashboard-panel-body no-pad">
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr><th>Date</th><th>Patient</th><th>Doctor</th><th>Department</th><th>Status</th><th>Fee</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Jul 24, 2026</td><td>John Anderson</td><td>Dr. Sarah Mitchell</td><td>Cardiology</td><td><span class="status-badge approved">Approved</span></td><td>$150</td></tr>
+                  <tr><td>Jul 24, 2026</td><td>Maria Garcia</td><td>Dr. Priya Sharma</td><td>Neurology</td><td><span class="status-badge pending">Pending</span></td><td>$170</td></tr>
+                  <tr><td>Jul 24, 2026</td><td>David Lee</td><td>Dr. James Carter</td><td>Orthopedics</td><td><span class="status-badge completed">Completed</span></td><td>$180</td></tr>
+                  <tr><td>Jul 25, 2026</td><td>Sophia Turner</td><td>Dr. Lisa Nguyen</td><td>Dental</td><td><span class="status-badge pending">Pending</span></td><td>$100</td></tr>
+                  <tr><td>Jul 25, 2026</td><td>Daniel Kim</td><td>Dr. Michael Chen</td><td>Pediatrics</td><td><span class="status-badge approved">Approved</span></td><td>$120</td></tr>
+                  <tr><td>Jul 26, 2026</td><td>Olivia Brown</td><td>Dr. Emily Davis</td><td>Dermatology</td><td><span class="status-badge cancelled">Cancelled</span></td><td>$140</td></tr>
+                  <tr><td>Jul 26, 2026</td><td>Ethan Wilson</td><td>Dr. Ahmed Khan</td><td>ENT</td><td><span class="status-badge completed">Completed</span></td><td>$130</td></tr>
+                  <tr><td>Jul 27, 2026</td><td>Ava Martinez</td><td>Dr. Robert Williams</td><td>General Medicine</td><td><span class="status-badge approved">Approved</span></td><td>$90</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+<%-include('footer.ejs');%>

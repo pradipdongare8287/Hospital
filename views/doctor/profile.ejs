@@ -1,0 +1,198 @@
+<%-include('header.ejs');%>
+
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="dashboard-main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>My Profile</h1>
+            <p>Manage your personal and professional details</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="dashboard.html#notifications">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-user-plus"></i></div>
+                  <div class="notification-body">
+                    <h5>New Patient Assigned</h5>
+                    <p>Michael Carter has been assigned to your care.</p>
+                    <span class="notif-time">1 hour ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Request</h5>
+                    <p>Priya Anand requested an appointment for Jul 29.</p>
+                    <span class="notif-time">3 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Result Alert</h5>
+                    <p>Abnormal result flagged for patient Daniel Osei.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="dashboard.html#notifications">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+              <span class="profile-name">Dr. Sarah Mitchell</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Dr. Sarah Mitchell</strong>
+                <span>Cardiology</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> My Schedule</a>
+              <div class="divider"></div>
+              <a href="/docotr/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="profile-layout">
+          <!-- Sidebar card -->
+          <div class="profile-sidebar-card">
+            <div class="profile-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+              <span class="avatar-edit" title="Change photo"><i class="fa-solid fa-camera"></i></span>
+            </div>
+            <h3>Dr. Sarah Mitchell</h3>
+            <span class="role-tag">Cardiology</span>
+            <div class="profile-stats-mini">
+              <div>
+                <strong>14</strong>
+                <span>Years Experience</span>
+              </div>
+              <div>
+                <strong>312</strong>
+                <span>Patients Treated</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form card -->
+          <div class="profile-form-card">
+            <div class="profile-form-tabs" data-tabs>
+              <button type="button" class="active" data-tab="personal">Personal Info</button>
+              <button type="button" data-tab="security">Change Password</button>
+            </div>
+
+            <div class="profile-form-body">
+              <!-- Personal info -->
+              <div class="tab-panel active" data-tab-panel="personal">
+                <h4 class="form-section-title">Personal &amp; Professional Details</h4>
+                <form action="#" method="post">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Full Name <span class="required">*</span></label>
+                      <input type="text" name="name" class="form-control" value="Dr. Sarah Mitchell" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Email Address</label>
+                      <input type="email" name="email" class="form-control" value="sarah.mitchell@medicare.com" disabled />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Phone Number</label>
+                      <input type="tel" name="phone" class="form-control" value="+1 555-0132" placeholder="+1 555-0000" />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Specialty</label>
+                      <input type="text" name="specialty" class="form-control" value="Interventional Cardiologist" />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Department</label>
+                      <select name="departmentId" class="form-control">
+                        <option selected>Cardiology</option>
+                        <option>Neurology</option>
+                        <option>Dental</option>
+                        <option>Orthopedics</option>
+                        <option>General Medicine</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Gender</label>
+                      <select name="gender" class="form-control">
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Clinic Address</label>
+                    <input type="text" name="address" class="form-control" value="1250 Healing Way, Suite 100, Health City" />
+                  </div>
+                  <div class="form-actions">
+                    <button type="reset" class="btn btn-outline">Reset</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Changes</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Password -->
+              <div class="tab-panel" data-tab-panel="security" hidden>
+                <h4 class="form-section-title">Change Password</h4>
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label class="form-label">Current Password <span class="required">*</span></label>
+                    <input type="password" name="currentPassword" class="form-control" required />
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">New Password <span class="required">*</span></label>
+                      <input type="password" name="newPassword" class="form-control" minlength="6" required />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Confirm New Password <span class="required">*</span></label>
+                      <input type="password" name="confirmPassword" class="form-control" minlength="6" required />
+                    </div>
+                  </div>
+                  <p class="form-hint"><i class="fa-solid fa-circle-info"></i> Password must be at least 6 characters long.</p>
+                  <div class="form-actions">
+                    <button type="reset" class="btn btn-outline">Reset</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-lock"></i> Update Password</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<%-include('footer.ejs');%>

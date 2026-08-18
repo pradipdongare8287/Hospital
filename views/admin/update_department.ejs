@@ -1,0 +1,201 @@
+<%-include('header.ejs');%>
+
+      <main class="dashboard-content">
+       
+
+        
+
+      
+
+
+        <!-- ========================================DEPARTMENT ADDING FORM =============================================== -->
+
+
+<div style="min-height:100vh;background:linear-gradient(135deg,#0f172a,#1e3a8a,#06b6d4);display:flex;justify-content:center;align-items:center;padding:50px;">
+
+    <form action="/admin/update_department/<%=update_department.Did%>" method="post"
+                              style="width:850px;
+                              background:rgba(255,255,255,0.12);
+                              backdrop-filter:blur(20px);
+                              border-radius:30px;
+                              padding:40px;
+                              box-shadow:0px 20px 60px rgba(0,0,0,.35);
+                              border:1px solid rgba(255,255,255,.2);">
+
+                              <h1 style="text-align:center;
+                              color:white;
+                              font-size:34px;
+                              margin-bottom:8px;">
+                                  🏥 Update Department
+                              </h1>
+
+                              <p style="text-align:center;
+                              color:#dbeafe;
+                              margin-bottom:35px;">
+                                  Update a existing hospital department
+                              </p>
+
+        <div style="display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:25px;">
+
+            <!-- Logo -->
+
+                  <div>
+                      <label style="display:block;
+                      color:white;
+                      font-weight:bold;
+                      margin-bottom:8px;">
+                          Department Icon
+                      </label>
+
+                      <input type="text" name="department_icon"
+                          value="<%=update_department.Department_icon%>"
+                          style="width:100%;
+                          padding:14px;
+                          border:none;
+                          border-radius:12px;
+                          background:white;">
+                  </div>
+
+            <!-- Department Name -->
+
+                  <div>
+                      <label style="display:block;
+                      color:white;
+                      font-weight:bold;
+                      margin-bottom:8px;">
+                          Department Name
+                      </label>
+
+                      <input type="text"
+                          value="<%=update_department.Department_name%>"
+                          name="department_name"
+                          placeholder="Cardiology"
+
+                          style="width:100%;
+                          padding:14px;
+                          border:none;
+                          outline:none;
+                          border-radius:12px;
+                          font-size:16px;">
+                  </div>
+
+            <!-- Doctors -->
+
+                  <div>
+                      <label style="display:block;
+                      color:white;
+                      font-weight:bold;
+                      margin-bottom:8px;">
+                          Doctors
+                      </label>
+
+                      <input type="text"
+                          value="<%=update_department.Doctors%>"
+                          maxlength="2"
+                          oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                          name="doctors"
+                          placeholder="ex. 1,2,3,4"
+
+                          style="width:100%;
+                          padding:14px;
+                          border:none;
+                          outline:none;
+                          border-radius:12px;
+                          font-size:16px;">
+                  </div>
+
+            <!-- Beds -->
+
+                  <div>
+                      <label style="display:block;
+                      color:white;
+                      font-weight:bold;
+                      margin-bottom:8px;">
+                          Beds
+                      </label>
+
+                      <input type="text"
+                          value="<%=update_department.Beads%>"
+                          maxlength="2"
+                          name="beds"
+                          pattern="[0-9]{2}"
+                          oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                          placeholder="120"
+
+                          style="width:100%;
+                          padding:14px;
+                          border:none;
+                          outline:none;
+                          border-radius:12px;
+                          font-size:16px;">
+                  </div>
+
+        </div>
+
+        <!-- Description -->
+
+                  <div style="margin-top:25px;">
+
+                      <label style="display:block;
+                      color:white;
+                      font-weight:bold;
+                      margin-bottom:8px;">
+                          Department Description
+                      </label>
+
+                      <textarea
+                          name="department_description"
+                          rows="6"
+                          placeholder="Write department details..."
+
+                          style="width:100%;
+                          padding:16px;
+                          border:none;
+                          outline:none;
+                          border-radius:15px;
+                          resize:none;
+                          font-size:16px;">
+                          <%=update_department.Department_discription%>
+                        </textarea>
+
+                  </div>
+
+        <!-- Button -->
+
+                    <div style="text-align:center;
+                    margin-top:35px;">
+
+                        <button
+                            style="padding:16px 60px;
+                            border:none;
+                            border-radius:50px;
+                            background:linear-gradient(90deg,#22c55e,#16a34a);
+                            color:white;
+                            font-size:18px;
+                            font-weight:bold;
+                            cursor:pointer;
+                            transition:.3s;
+                            box-shadow:0px 10px 30px rgba(34,197,94,.5);">
+
+                            ➕ Update Department
+
+                        </button>
+
+                    </div>
+
+    </form>
+
+</div>
+
+
+         <!-- ============================================================================================================= -->
+
+       
+
+      </main>
+    </div>
+  </div>
+
+  <%-include('footer.ejs')%>

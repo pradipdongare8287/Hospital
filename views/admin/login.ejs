@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MediCare Plus Admin — secure sign-in for hospital administrators." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin Sign In | MediCare Plus</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+
+  <div class="auth-page">
+    <div class="auth-visual">
+      <div class="auth-visual-content">
+        <a href="../index.html" class="logo">
+          <span class="logo-icon"><i class="fa-solid fa-hospital"></i></span>
+          <span class="logo-text">Medi<span>Care</span> Plus</span>
+        </a>
+        <h2>Admin Control Center</h2>
+        <p>Manage doctors, patients, appointments, departments, and inventory — all from one secure hospital dashboard.</p>
+        <ul class="auth-visual-features">
+          <li><i class="fa-solid fa-check"></i> Real-time appointment &amp; revenue overview</li>
+          <li><i class="fa-solid fa-check"></i> Full doctor, patient &amp; inventory management</li>
+          <li><i class="fa-solid fa-check"></i> Role-based, restricted administrator access</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div class="auth-logo-mobile">
+          <a href="../index.html" class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-hospital"></i></span>
+            <span class="logo-text">Medi<span>Care</span> Plus</span>
+          </a>
+        </div>
+
+        <div class="auth-header">
+          <h1>Admin Sign In</h1>
+          <p>Restricted access — authorized hospital administrators only.</p>
+        </div>
+
+        <form  action="/admin/Check_login" method="post" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="admin-email">Email Address <span class="required">*</span></label>
+            <div class="input-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="admin-email" name="email" class="form-control" placeholder="admin@medicare.com" autocomplete="username" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="admin-password">Password <span class="required">*</span></label>
+            <div class="input-icon right">
+              <input type="password" id="admin-password" name="password" class="form-control" placeholder="Enter your password" autocomplete="current-password" required />
+              <i class="fa-regular fa-eye" data-toggle-password="admin-password"></i>
+            </div>
+          </div>
+
+          <div class="auth-remember">
+            <label class="form-check"><input type="checkbox" name="remember" /> Keep me signed in</label>
+            <a href="../login.html">Not an admin?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            <i class="fa-solid fa-right-to-bracket"></i> Sign In to Admin Panel
+          </button>
+        </form>
+
+        <div class="alert alert-info" style="margin-top:1.5rem;">
+          <i class="fa-solid fa-circle-info"></i>
+          <div>This form posts to <code>#</code> and is awaiting backend integration. <a href="dashboard.html">Preview the dashboard →</a></div>
+        </div>
+
+        <div class="auth-footer">
+          <p><a href="/login"><i class="fa-solid fa-arrow-left"></i> Back to patient / doctor login</a></p>
+          <p><a href="/">Return to MediCare Plus website</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

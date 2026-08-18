@@ -1,0 +1,176 @@
+<%-include('header.ejs');%>
+
+
+    <main class="dashboard-main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>Medical Reports</h1>
+            <p>Lab results and diagnostic reports, ready to download.</p>
+          </div>
+        </div>
+
+        <form class="topbar-search" action="#" method="get" role="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" name="q" placeholder="Search records, doctors, invoices…" aria-label="Search" />
+        </form>
+
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="badge-dot">2</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="notifications.html">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Confirmed</h5>
+                    <p>Your visit with Dr. Sarah Mitchell on Jul 28 at 10:30 AM is confirmed.</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Report Ready</h5>
+                    <p>Your Complete Blood Count report is ready to download.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-credit-card"></i></div>
+                  <div class="notification-body">
+                    <h5>Payment Due</h5>
+                    <p>Invoice INV-2041 of $85.00 is due on Aug 2.</p>
+                    <span class="notif-time">2 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="notifications.html">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Emma Johnson" />
+              <span class="profile-name">Emma Johnson</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Emma Johnson</strong>
+                <span>emma.johnson@example.com</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> My Appointments</a>
+              <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a>
+              <div class="divider"></div>
+              <a href="/petient/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="page-toolbar">
+          <h2>Medical Reports</h2>
+          <div class="page-toolbar-actions">
+            <span class="badge badge-success">4 ready</span>
+            <span class="badge badge-warning">1 pending</span>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="form-control" placeholder="Search by report name, type, or doctor…" />
+          </div>
+          <select class="form-control">
+            <option value="all">All Types</option>
+            <option value="Lab Test">Lab Test</option>
+            <option value="Radiology">Radiology</option>
+            <option value="Cardiac Test">Cardiac Test</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Report Name</th>
+                <th>Type</th>
+                <th>Ordered By</th>
+                <th>Date</th>
+                <th>Size</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-flask"></i></div><div><strong>Complete Blood Count</strong><span>Pathology</span></div></div></td>
+                <td>Lab Test</td>
+                <td>Dr. Sarah Mitchell</td>
+                <td>Jul 18, 2026</td>
+                <td>420 KB</td>
+                <td><span class="badge badge-success">Ready</span></td>
+                <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Download</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-heart-pulse"></i></div><div><strong>ECG Report</strong><span>Cardiology</span></div></div></td>
+                <td>Cardiac Test</td>
+                <td>Dr. Sarah Mitchell</td>
+                <td>May 02, 2026</td>
+                <td>1.1 MB</td>
+                <td><span class="badge badge-success">Ready</span></td>
+                <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Download</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-x-ray"></i></div><div><strong>Chest X-Ray</strong><span>Radiology</span></div></div></td>
+                <td>Radiology</td>
+                <td>Dr. James Carter</td>
+                <td>Apr 21, 2026</td>
+                <td>3.4 MB</td>
+                <td><span class="badge badge-success">Ready</span></td>
+                <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Download</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-flask"></i></div><div><strong>Lipid Profile</strong><span>Pathology</span></div></div></td>
+                <td>Lab Test</td>
+                <td>Dr. Sarah Mitchell</td>
+                <td>Feb 10, 2026</td>
+                <td>310 KB</td>
+                <td><span class="badge badge-success">Ready</span></td>
+                <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Download</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-flask"></i></div><div><strong>Thyroid Panel</strong><span>Pathology</span></div></div></td>
+                <td>Lab Test</td>
+                <td>Dr. Sarah Mitchell</td>
+                <td>Jul 20, 2026</td>
+                <td>—</td>
+                <td><span class="badge badge-warning">Pending</span></td>
+                <td class="table-actions"><span class="text-muted">Awaiting results</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+<%-include('footer.ejs');%>
+

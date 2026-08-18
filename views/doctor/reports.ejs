@@ -1,0 +1,187 @@
+<%-include('header.ejs');%>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="dashboard-main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div class="topbar-title">
+            <h1>Reports</h1>
+            <p>Upload lab results, scans, and patient documents</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <div class="topbar-btn-wrap dropdown">
+            <button type="button" class="topbar-btn" data-dropdown aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown">
+              <div class="notif-dropdown-header">
+                <h4>Notifications</h4>
+                <a href="dashboard.html#notifications">Mark all read</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon success"><i class="fa-solid fa-user-plus"></i></div>
+                  <div class="notification-body">
+                    <h5>New Patient Assigned</h5>
+                    <p>Michael Carter has been assigned to your care.</p>
+                    <span class="notif-time">1 hour ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notification-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div class="notification-body">
+                    <h5>Appointment Request</h5>
+                    <p>Priya Anand requested an appointment for Jul 29.</p>
+                    <span class="notif-time">3 hours ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon warning"><i class="fa-solid fa-flask"></i></div>
+                  <div class="notification-body">
+                    <h5>Lab Result Alert</h5>
+                    <p>Abnormal result flagged for patient Daniel Osei.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-dropdown-footer">
+                <a href="dashboard.html#notifications">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile-dropdown dropdown">
+            <button type="button" class="profile-trigger" data-dropdown>
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Mitchell" />
+              <span class="profile-name">Dr. Sarah Mitchell</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="profile-menu">
+              <div class="profile-menu-header">
+                <strong>Dr. Sarah Mitchell</strong>
+                <span>Cardiology</span>
+              </div>
+              <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+              <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> My Schedule</a>
+              <div class="divider"></div>
+              <a href="/docotr/logout" class="danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+
+        <div class="dashboard-grid">
+          <div class="col-4">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header">
+                <h3>Upload Report</h3>
+              </div>
+              <div class="dashboard-panel-body">
+                <form action="#" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label class="form-label">Patient <span class="required">*</span></label>
+                    <select class="form-control" name="patientId" required>
+                      <option value="">Select Patient</option>
+                      <option>Michael Carter</option>
+                      <option>Emma Johnson</option>
+                      <option>Priya Anand</option>
+                      <option>Daniel Osei</option>
+                      <option>Grace Kim</option>
+                      <option>John Smith</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Report Title</label>
+                    <input type="text" class="form-control" name="title" placeholder="e.g. Complete Blood Count" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Report Type</label>
+                    <select class="form-control" name="reportType">
+                      <option value="Lab Report">Lab Report</option>
+                      <option value="Imaging / Scan">Imaging / Scan</option>
+                      <option value="Discharge Summary">Discharge Summary</option>
+                      <option value="Prescription">Prescription</option>
+                      <option value="General">General Document</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">File <span class="required">*</span></label>
+                    <label class="empty-state" style="padding:2rem 1rem;border:1.5px dashed var(--border);border-radius:var(--radius-md);cursor:pointer;display:block;">
+                      <i class="fa-solid fa-cloud-arrow-up" style="font-size:2rem;color:var(--primary);margin-bottom:0.75rem;display:block;"></i>
+                      <span style="font-size:0.85rem;color:var(--text-muted);">Drag &amp; drop files here, or click to browse</span>
+                      <input type="file" name="file" multiple style="position:absolute;width:1px;height:1px;opacity:0;" />
+                    </label>
+                    <span class="form-hint">Accepted formats: PDF, JPG, PNG (max 10MB).</span>
+                  </div>
+                  <div class="form-actions" style="justify-content:flex-start;">
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-upload"></i> Upload Report</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8">
+            <div class="dashboard-panel">
+              <div class="dashboard-panel-header">
+                <h3>Patient Reports</h3>
+                <div class="search-box" style="width:220px;">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="search" placeholder="Search reports…" />
+                </div>
+              </div>
+              <div class="dashboard-panel-body no-pad">
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr><th>Report</th><th>Patient</th><th>Type</th><th>Date</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-flask"></i></div><div><strong>Complete Blood Count</strong><span>Lab Report</span></div></div></td>
+                        <td>Michael Carter</td>
+                        <td>Lab Report</td>
+                        <td>Jul 23, 2026</td>
+                        <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-heart-pulse"></i></div><div><strong>ECG Report</strong><span>Cardiac Test</span></div></div></td>
+                        <td>Emma Johnson</td>
+                        <td>Imaging / Scan</td>
+                        <td>Jul 20, 2026</td>
+                        <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-flask"></i></div><div><strong>Lipid Panel</strong><span>Lab Report</span></div></div></td>
+                        <td>Daniel Osei</td>
+                        <td>Lab Report</td>
+                        <td>Jul 18, 2026</td>
+                        <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td><div class="table-user"><div class="stat-icon blue" style="width:38px;height:38px;font-size:1rem;"><i class="fa-solid fa-file-waveform"></i></div><div><strong>Discharge Summary</strong><span>Post-surgery</span></div></div></td>
+                        <td>Robert Diaz</td>
+                        <td>Discharge Summary</td>
+                        <td>Jul 05, 2026</td>
+                        <td class="table-actions"><button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<%-include('footer.ejs');%>
+

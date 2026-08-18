@@ -1,0 +1,189 @@
+<%-include('header.ejs');%>
+
+      <main class="dashboard-content">
+        <div class="stat-cards" style="margin-bottom:1.75rem;">
+          <div class="stat-card">
+            <div class="stat-card-icon blue"><i class="fa-solid fa-pills"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Total Medicines</div>
+              <div class="stat-card-value">8</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon green"><i class="fa-solid fa-box-open"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">In Stock</div>
+              <div class="stat-card-value">4</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Low Stock</div>
+              <div class="stat-card-value">2</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon purple"><i class="fa-solid fa-ban"></i></div>
+            <div class="stat-card-body">
+              <div class="stat-card-label">Out of Stock</div>
+              <div class="stat-card-value">2</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-toolbar">
+          <h2>Medicine Catalog <span class="badge badge-primary">8 of 8</span></h2>
+          <div class="page-toolbar-actions">
+            <select class="form-control" style="max-width:180px;">
+              <option>All Stock Levels</option>
+              <option>In Stock</option>
+              <option>Low Stock</option>
+              <option>Out of Stock</option>
+            </select>
+            <button type="button" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Export CSV</button>
+            <a href="#medicine-form" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Medicine</a>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Medicine</th>
+                <th>Category</th>
+                <th>Stock Qty</th>
+                <th>Price</th>
+                <th>Stock Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paracetamol 500mg</td>
+                <td>Pain Relief</td>
+                <td style="min-width:140px;">420 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:84%;background:var(--success);"></div></div></td>
+                <td>$2.50</td>
+                <td><span class="status-badge active">In Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Amoxicillin 250mg</td>
+                <td>Antibiotic</td>
+                <td style="min-width:140px;">180 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:60%;background:var(--success);"></div></div></td>
+                <td>$6.75</td>
+                <td><span class="status-badge active">In Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Cetirizine 10mg</td>
+                <td>Antihistamine</td>
+                <td style="min-width:140px;">35 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:18%;background:var(--warning);"></div></div></td>
+                <td>$3.20</td>
+                <td><span class="status-badge pending">Low Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Metformin 500mg</td>
+                <td>Diabetes</td>
+                <td style="min-width:140px;">260 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:65%;background:var(--success);"></div></div></td>
+                <td>$4.10</td>
+                <td><span class="status-badge active">In Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Atorvastatin 20mg</td>
+                <td>Cardiac</td>
+                <td style="min-width:140px;">0 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:0%;background:var(--danger);"></div></div></td>
+                <td>$8.90</td>
+                <td><span class="status-badge cancelled">Out of Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Omeprazole 20mg</td>
+                <td>Gastro</td>
+                <td style="min-width:140px;">90 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:45%;background:var(--success);"></div></div></td>
+                <td>$5.40</td>
+                <td><span class="status-badge active">In Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Ibuprofen 400mg</td>
+                <td>Pain Relief</td>
+                <td style="min-width:140px;">18 strips<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:9%;background:var(--warning);"></div></div></td>
+                <td>$2.90</td>
+                <td><span class="status-badge pending">Low Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td>Insulin Glargine</td>
+                <td>Diabetes</td>
+                <td style="min-width:140px;">0 units<div class="progress" style="margin-top:0.4rem;"><div class="progress-bar" style="width:0%;background:var(--danger);"></div></div></td>
+                <td>$32.00</td>
+                <td><span class="status-badge cancelled">Out of Stock</span></td>
+                <td><div class="table-actions"><a href="#medicine-form" class="btn btn-sm btn-outline" aria-label="Edit"><i class="fa-solid fa-pen"></i></a><button type="button" class="btn btn-sm btn-outline" style="color:var(--danger);" aria-label="Delete"><i class="fa-solid fa-trash"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button type="button" disabled><i class="fa-solid fa-chevron-left"></i></button>
+          <button type="button" class="active">1</button>
+          <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="dashboard-panel" id="medicine-form" style="margin-top:1.75rem;">
+          <div class="dashboard-panel-header"><h3><i class="fa-solid fa-pills"></i> Add / Edit Medicine</h3></div>
+          <div class="dashboard-panel-body">
+            <form action="#" method="post">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="med-name">Medicine Name <span class="required">*</span></label>
+                  <input type="text" id="med-name" name="name" class="form-control" placeholder="Paracetamol 500mg" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="med-category">Category <span class="required">*</span></label>
+                  <input type="text" id="med-category" name="category" class="form-control" placeholder="Pain Relief" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="med-price">Price ($) <span class="required">*</span></label>
+                  <input type="number" id="med-price" name="price" class="form-control" min="0" step="0.01" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="med-stock">Stock Quantity <span class="required">*</span></label>
+                  <input type="number" id="med-stock" name="stock" class="form-control" min="0" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="med-unit">Unit</label>
+                  <select id="med-unit" name="unit" class="form-control">
+                    <option value="strip">Strip</option>
+                    <option value="pack">Pack</option>
+                    <option value="bottle">Bottle</option>
+                    <option value="unit">Unit</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="med-manufacturer">Manufacturer</label>
+                  <input type="text" id="med-manufacturer" name="manufacturer" class="form-control" placeholder="e.g. HeartCare Labs" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="med-description">Description</label>
+                <textarea id="med-description" name="description" class="form-control" rows="3" placeholder="Usage / dosage details…"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="reset" class="btn btn-outline">Reset</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Medicine</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+<%-include('footer.ejs');%>

@@ -1,0 +1,449 @@
+<%-include('header.ejs');%>
+
+  <main id="main-content"></main>
+    <!-- Hero -->
+    <section class="hero-slider">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hero-slide" style="background-image:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80')">
+            <div class="container hero-content">
+              <div class="hero-text">
+                <span class="hero-eyebrow"><i class="fa-solid fa-shield-heart"></i> Trusted Healthcare Since 1998</span>
+                <h1>Medi<span>Care</span> Plus</h1>
+                <p class="lead">World-class medical care with compassionate specialists, modern facilities, and round-the-clock emergency support.</p>
+                <div class="btn-group">
+                  <a href="appointment.html" class="btn btn-secondary btn-lg"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+                  <a href="doctors.html" class="btn btn-outline-white btn-lg"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+                </div>
+              </div>
+              <div class="hero-form-card card-glass">
+                <h3><i class="fa-solid fa-calendar-plus"></i> Quick Appointment</h3>
+                <p>Book your visit in under a minute</p>
+                <form action="#" method="post">
+                  <div class="form-group"><input type="text" name="patient_name" class="form-control" placeholder="Your Full Name" required /></div>
+                  <div class="form-group"><input type="tel" name="phone" class="form-control" placeholder="Phone Number" required /></div>
+                  <div class="form-group">
+                    <select name="department" class="form-control" required>
+                      <option value="">Select Department</option>
+                      <option>Cardiology</option>
+                      <option>Neurology</option>
+                      <option>Orthopedics</option>
+                      <option>Pediatrics</option>
+                      <option>Dental</option>
+                      <option>Ophthalmology</option>
+                      <option>Gynecology</option>
+                      <option>Dermatology</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select name="doctor" class="form-control" required>
+                      <option value="">Select Doctor</option>
+                      <option>Dr. Sarah Mitchell</option>
+                      <option>Dr. James Chen</option>
+                      <option>Dr. Priya Sharma</option>
+                      <option>Dr. Michael Torres</option>
+                    </select>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group"><input type="date" name="date" class="form-control" required /></div>
+                    <div class="form-group">
+                      <select name="time" class="form-control" required>
+                        <option value="">Time</option>
+                        <option>09:00 AM</option>
+                        <option>10:00 AM</option>
+                        <option>11:00 AM</option>
+                        <option>02:00 PM</option>
+                        <option>03:00 PM</option>
+                        <option>04:00 PM</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Request Appointment</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide" style="background-image:url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1920&q=80')">
+            <div class="container hero-content hero-content-center">
+              <div class="hero-text text-center">
+                <span class="hero-eyebrow"><i class="fa-solid fa-heartbeat"></i> 24/7 Emergency Care</span>
+                <h1>Expert Care When<br>Every Second Counts</h1>
+                <p class="lead">Our trauma and emergency teams are ready around the clock with advanced life-support systems.</p>
+                <div class="btn-group justify-center">
+                  <a href="tel:108" class="btn btn-danger btn-lg"><i class="fa-solid fa-phone-volume"></i> Call Emergency</a>
+                  <a href="services.html" class="btn btn-outline-white btn-lg">Our Services</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80')">
+            <div class="container hero-content hero-content-center">
+              <div class="hero-text text-center">
+                <span class="hero-eyebrow"><i class="fa-solid fa-stethoscope"></i> Multi-Specialty Excellence</span>
+                <h1>Meet Our Specialist Doctors</h1>
+                <p class="lead">Board-certified physicians across cardiology, neurology, orthopedics, pediatrics, and more.</p>
+                <div class="btn-group justify-center">
+                  <a href="doctors.html" class="btn btn-secondary btn-lg">View Doctors</a>
+                  <a href="about.html" class="btn btn-outline-white btn-lg">About Hospital</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- Emergency -->
+    <section class="emergency-banner">
+      <div class="container">
+        <div class="emergency-banner-inner">
+          <div class="emergency-info">
+            <i class="fa-solid fa-truck-medical"></i>
+            <div>
+              <strong>24/7 Emergency Helpline</strong>
+              <span>Immediate ambulance &amp; trauma response</span>
+            </div>
+          </div>
+          <a href="tel:108" class="emergency-number">108 / +1-800-911-HELP</a>
+          <a href="appointment.html" class="btn btn-white btn-sm">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Departments -->
+    <section class="section" id="departments">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">Our Departments</span>
+          <h2>Specialized Care Units</h2>
+          <p>Eight centers of excellence delivering advanced diagnostics and treatment under one roof.</p>
+        </div>
+        <div class="dept-grid">
+          <% for(var i=0;i<department.length;i++){ %>
+          <article class="dept-card card-interactive" >
+            <div class="dept-card-icon"><i class="<%=department[i].Department_icon%>"></i></div>
+            <h3><%=department[i].Department_name%></h3>
+            <p><%=department[i].Department_discription%></p>
+            <div class="dept-card-meta"><span><i class="fa-solid fa-user-doctor"></i><%=department[i].Doctors%>  Doctors</span><span><i class="fa-solid fa-bed"></i><%=department[i].Beads%>  Beds</span></div>
+            <a href="/doctors" class="btn btn-ghost btn-sm">View Doctors</a>
+          </article>
+          <% } %>
+          
+        </div>
+        <div class="text-center mt-4"><a href="departments.html" class="btn btn-outline">View All Departments <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+
+    </section>
+
+    <!-- Doctors -->
+    <section class="section bg-alt" >
+      <div class="container">
+        <div class="section-header" >
+          <span class="eyebrow">Medical Team</span>
+          <h2>Meet Our Top Doctors</h2>
+          <p>Experienced specialists dedicated to personalized, compassionate care.</p>
+        </div>
+        <div class="swiper doctors-swiper">
+          <div class="swiper-wrapper">
+            <% for(var i=0;i<doctors.length;i++){ %>
+            <div class="swiper-slide">
+              <article class="doctor-card">
+                <a href="doctor-details.html" class="doctor-card-media">
+                  <img src="/images/<%=doctors[i].Doctor_image%>" alt="<%=doctors[i].Doctor_name%>" />
+                  <span class="doctor-exp"><%=doctors[i].Doctor_expirence%>+ Years</span>
+                </a>
+                <div class="doctor-card-body">
+                  <h3><a href="/doctor_details/<%=doctors[i].Doc_id%>"><%=doctors[i].Doctor_name%></a></h3>
+                  <p class="text-primary"><%=doctors[i].Doctor_specility%></p>
+                  <p class="text-muted"><%=doctors[i].Doctor_department%></p>
+                  <div class="doctor-card-meta"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> <span><%=doctors[i].Doctor_rating%> (<%=doctors[i].Doctor_treat_patient%>)</span></div>
+                  <a href="/appointment/<%=doctors[i].Doc_id%>" class="btn btn-primary btn-sm btn-block">Book Appointment</a>
+                </div>
+              </article>
+            </div>
+            <% } %>
+            <!-- <div class="swiper-slide">
+              <article class="doctor-card">
+                <a href="doctor-details.html" class="doctor-card-media">
+                  <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Dr. James Chen" />
+                  <span class="doctor-exp">18+ Years</span>
+                </a>
+                <div class="doctor-card-body">
+                  <h3><a href="doctor-details.html">Dr. James Chen</a></h3>
+                  <p class="text-primary">Neurologist</p>
+                  <p class="text-muted">Neurology</p>
+                  <div class="doctor-card-meta"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></span> <span>4.8 (186)</span></div>
+                  <a href="appointment.html" class="btn btn-primary btn-sm btn-block">Book Appointment</a>
+                </div>
+              </article>
+            </div> -->
+            <!-- <div class="swiper-slide">
+              <article class="doctor-card">
+                <a href="doctor-details.html" class="doctor-card-media">
+                  <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80" alt="Dr. Priya Sharma" />
+                  <span class="doctor-exp">12+ Years</span>
+                </a>
+                <div class="doctor-card-body">
+                  <h3><a href="doctor-details.html">Dr. Priya Sharma</a></h3>
+                  <p class="text-primary">Orthopedic Surgeon</p>
+                  <p class="text-muted">Orthopedics</p>
+                  <div class="doctor-card-meta"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> <span>4.9 (154)</span></div>
+                  <a href="appointment.html" class="btn btn-primary btn-sm btn-block">Book Appointment</a>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="doctor-card">
+                <a href="doctor-details.html" class="doctor-card-media">
+                  <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. Michael Torres" />
+                  <span class="doctor-exp">14+ Years</span>
+                </a>
+                <div class="doctor-card-body">
+                  <h3><a href="doctor-details.html">Dr. Michael Torres</a></h3>
+                  <p class="text-primary">Pediatrician</p>
+                  <p class="text-muted">Pediatrics</p>
+                  <div class="doctor-card-meta"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></span> <span>4.7 (198)</span></div>
+                  <a href="appointment.html" class="btn btn-primary btn-sm btn-block">Book Appointment</a>
+                </div>
+              </article>
+            </div> -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="text-center mt-4"><a href="doctors.html" class="btn btn-outline">View All Doctors</a></div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item"><div class="stat-icon blue"><i class="fa-solid fa-user-doctor"></i></div><div class="stat-number">250+</div><div class="stat-label">Expert Doctors</div></div>
+          <div class="stat-item"><div class="stat-icon green"><i class="fa-solid fa-hospital-user"></i></div><div class="stat-number">45,000+</div><div class="stat-label">Happy Patients</div></div>
+          <div class="stat-item"><div class="stat-icon orange"><i class="fa-solid fa-bed"></i></div><div class="stat-number">320</div><div class="stat-label">Hospital Beds</div></div>
+          <div class="stat-item"><div class="stat-icon red"><i class="fa-solid fa-award"></i></div><div class="stat-number">28</div><div class="stat-label">Years of Excellence</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">Patient Stories</span>
+          <h2>What Our Patients Say</h2>
+          <p>Real experiences from families who trusted MediCare Plus with their health.</p>
+        </div>
+        <div class="swiper testimonials-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <blockquote class="testimonial-card">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>“The cardiology team saved my father’s life. Compassionate nurses and crystal-clear communication throughout.”</p>
+                <footer><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Anita Rao" class="avatar" /><div><strong>Anita Rao</strong><span>Cardiac Patient Family</span></div></footer>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="testimonial-card">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>“Booking an appointment was seamless, and Dr. Torres made my daughter feel completely at ease.”</p>
+                <footer><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="David Kim" class="avatar" /><div><strong>David Kim</strong><span>Parent</span></div></footer>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="testimonial-card">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div>
+                <p>“Clean facilities, modern equipment, and doctors who actually listen. Highly recommended.”</p>
+                <footer><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Maria Lopez" class="avatar" /><div><strong>Maria Lopez</strong><span>Orthopedic Patient</span></div></footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="text-center mt-4"><a href="testimonials.html" class="btn btn-outline">All Testimonials</a></div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section bg-alt" id="pricing">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">Health Packages</span>
+          <h2>Affordable Care Plans</h2>
+          <p>Transparent packages designed for individuals and families.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card" data-aos="fade-up">
+            <h3>Basic Checkup</h3>
+            <div class="pricing-price"><span class="amount">$99</span><span class="period">/visit</span></div>
+            <p class="pricing-desc">Ideal for annual wellness visits and essential screenings.</p>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check"></i> General physician consultation</li>
+              <li><i class="fa-solid fa-check"></i> Basic blood panel</li>
+              <li><i class="fa-solid fa-check"></i> BMI &amp; vitals check</li>
+              <li><i class="fa-solid fa-check"></i> Digital health report</li>
+            </ul>
+            <a href="appointment.html" class="btn btn-outline btn-block">Choose Plan</a>
+          </article>
+          <article class="pricing-card featured" data-aos="fade-up">
+            <span class="pricing-badge">Most Popular</span>
+            <h3>Family Care</h3>
+            <div class="pricing-price"><span class="amount">$299</span><span class="period">/month</span></div>
+            <p class="pricing-desc">Coverage-style package for families of up to four members.</p>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check"></i> Up to 4 family members</li>
+              <li><i class="fa-solid fa-check"></i> Priority appointment booking</li>
+              <li><i class="fa-solid fa-check"></i> Annual full-body checkup</li>
+              <li><i class="fa-solid fa-check"></i> 24/7 nurse helpline</li>
+              <li><i class="fa-solid fa-check"></i> 10% off specialist fees</li>
+            </ul>
+            <a href="appointment.html" class="btn btn-primary btn-block">Choose Plan</a>
+          </article>
+          <article class="pricing-card" data-aos="fade-up">
+            <h3>Premium Health</h3>
+            <div class="pricing-price"><span class="amount">$599</span><span class="period">/month</span></div>
+            <p class="pricing-desc">Comprehensive concierge care with advanced diagnostics.</p>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check"></i> Everything in Family Care</li>
+              <li><i class="fa-solid fa-check"></i> Dedicated care coordinator</li>
+              <li><i class="fa-solid fa-check"></i> Home sample collection</li>
+              <li><i class="fa-solid fa-check"></i> Emergency room priority</li>
+            </ul>
+            <a href="appointment.html" class="btn btn-outline btn-block">Choose Plan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">Health Insights</span>
+          <h2>Latest From Our Blog</h2>
+          <p>Tips, research updates, and wellness guidance from our specialists.</p>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card card-interactive" data-aos="fade-up">
+            <a href="blog.html" class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c50140?auto=format&fit=crop&w=800&q=80" alt="Heart health" />
+              <span class="badge badge-secondary">Cardiology</span>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Mar 12, 2026</span><span><i class="fa-regular fa-user"></i> Dr. Sarah Mitchell</span></div>
+              <h3><a href="blog.html">5 Daily Habits for a Healthier Heart</a></h3>
+              <p>Simple lifestyle changes that meaningfully reduce cardiovascular risk.</p>
+              <a href="blog.html" class="btn-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="blog-card card-interactive" data-aos="fade-up">
+            <a href="blog.html" class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1559757175-5700dde9bc39?auto=format&fit=crop&w=800&q=80" alt="Brain health" />
+              <span class="badge badge-secondary">Neurology</span>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Mar 05, 2026</span><span><i class="fa-regular fa-user"></i> Dr. James Chen</span></div>
+              <h3><a href="blog.html">Recognizing Early Signs of Stroke</a></h3>
+              <p>Know the FAST warning signs and when to seek emergency care.</p>
+              <a href="blog.html" class="btn-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="blog-card card-interactive" data-aos="fade-up">
+            <a href="blog.html" class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Joint care" />
+              <span class="badge badge-secondary">Orthopedics</span>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> Feb 28, 2026</span><span><i class="fa-regular fa-user"></i> Dr. Priya Sharma</span></div>
+              <h3><a href="blog.html">Recovering Faster After Knee Surgery</a></h3>
+              <p>Physiotherapy milestones and home tips for a smoother recovery.</p>
+              <a href="blog.html" class="btn-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="text-center mt-4"><a href="blog.html" class="btn btn-primary">Read More Articles</a></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-alt" id="faq">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">Help Center</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers about appointments, insurance, and hospital visits.</p>
+        </div>
+        <div class="faq-layout">
+          <div class="faq-image" data-aos="fade-right">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Doctor consulting patient" />
+          </div>
+          <div class="accordion" data-aos="fade-left">
+            <div class="accordion-item open">
+              <button type="button" class="accordion-header">How do I book an appointment? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="accordion-body"><div class="accordion-content"><p>Use the Book Appointment page or call +1 (800) 555-0147. Choose department, doctor, date, and time — our team will confirm shortly.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-header">Do you accept insurance? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="accordion-body"><div class="accordion-content"><p>Yes. We work with major insurers. Bring your insurance card and ID on your visit for verification.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-header">What should I bring for my first visit? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="accordion-body"><div class="accordion-content"><p>Photo ID, insurance details, current medications list, and any previous medical reports or lab results.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-header">Is emergency care available 24/7? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="accordion-body"><div class="accordion-content"><p>Yes. Our emergency department operates around the clock. Call 108 or +1-800-911-HELP for ambulance support.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Visit or Contact Us</h2>
+          <p>We are here to help you schedule care and answer your questions.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info-cards">
+            <div class="contact-info-card"><i class="fa-solid fa-location-dot"></i><div><h4>Address</h4><p>1250 Healing Way, Suite 100<br>Health City, HC 90210</p></div></div>
+            <div class="contact-info-card"><i class="fa-solid fa-phone"></i><div><h4>Phone</h4><p>+1 (800) 555-0147<br>Emergency: 108</p></div></div>
+            <div class="contact-info-card"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>info@medicareplus.com<br>support@medicareplus.com</p></div></div>
+            <div class="contact-info-card"><i class="fa-regular fa-clock"></i><div><h4>Working Hours</h4><p>Mon–Fri 8AM–8PM · Sat 9AM–5PM<br>Sun: Emergency Only</p></div></div>
+          </div>
+          <div class="map-embed">
+            <iframe title="MediCare Plus location" loading="lazy" src="https://maps.google.com/maps?q=New%20York%20Hospital&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-inner">
+          <div>
+            <h2>Stay Informed About Your Health</h2>
+            <p>Subscribe for wellness tips, hospital updates, and exclusive checkup offers.</p>
+          </div>
+          <form class="newsletter-form-inline" action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+ <%-include('footer.ejs')%>
